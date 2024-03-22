@@ -1,0 +1,21 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background rectangle with rounded corners -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFC107" /> <!-- Set your desired background color here -->
+            <corners android:radius="500dp" /> <!-- Set your desired corner radius here -->
+        </shape>
+    </item>
+    <!-- Combined drawable including vector and selector -->
+    <item>
+        <inset
+            android:insetLeft="1dp"
+            android:insetTop="1dp"
+            android:insetRight="1dp"
+            android:insetBottom="1dp">
+            <layer-list>
+                <item android:drawable="@drawable/baseline_arrow_back_24" />
+            </layer-list>
+        </inset>
+    </item>
+</layer-list>

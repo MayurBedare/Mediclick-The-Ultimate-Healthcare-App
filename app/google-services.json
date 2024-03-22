@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "485711245222",
+    "project_id": "mediclick-416105",
+    "storage_bucket": "mediclick-416105.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485711245222:android:e7108cc2af31f9e5136967",
+        "android_client_info": {
+          "package_name": "com.example.mediclick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485711245222-sg0j0cjtd6llggtvif1idj6qd1dqabtl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mediclick",
+            "certificate_hash": "22df1346eb373b44c42d487babfe702e6cd2dbab"
+          }
+        },
+        {
+          "client_id": "485711245222-qjo5k0dvlehin9lnp83isuk5kji5dvi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKlq-UeRdPdci_WqXez_YgAEJ3Hnueqgk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485711245222-qjo5k0dvlehin9lnp83isuk5kji5dvi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

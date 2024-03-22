@@ -1,0 +1,161 @@
+package com.example.mediclick
+
+import android.os.Bundle
+import android.util.Log
+import okhttp3.*
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import org.json.JSONObject
+import java.io.IOException
+import java.util.concurrent.TimeUnit
+
+class HP : FeatureActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.er1) // Replace with your layout file
+
+        // Replace "YOUR_IMAGE_URL" with the URL of the image you want to perform the Google Lens search on
+        val imageUrl = ""
+        // Replace "YOUR_API_KEY" with your SerpApi private key
+        val apiKey = "a16e968080e8a5b57ae67013585498c8310c6d2d261d1e5629f3c99c09b99fe8"
+
+        val endpoint = "https://serpapi.com/search?engine=google_lens"
+
+        // Set up parameters
+        val urlBuilder = endpoint.toHttpUrlOrNull()!!.newBuilder()
+            .addQueryParameter("url", imageUrl)
+            .addQueryParameter("api_key", apiKey)
+            .addQueryParameter("output", "json") // Set the output to JSON to receive structured data
+            .build()
+
+        // Create the request
+        val request = Request.Builder()
+            .url(urlBuilder)
+            .build()
+
+        // Make the HTTP request using OkHttp
+        val client = OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS) // Adjust the timeout duration as needed
+            .readTimeout(30, TimeUnit.SECONDS) // Adjust the timeout duration as needed
+            .writeTimeout(30, TimeUnit.SECONDS) // Adjust the timeout duration as needed
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                // Handle the successful response
+                val responseBody = response.body?.string()
+
+                // Log the full response for debugging
+                Log.d("GoogleLensAPI", "Full Response: $responseBody")
+
+                try {
+                    // Parse the JSON response
+                    val jsonResult = JSONObject(responseBody)
+
+                    // Extract text results
+                    val textResults = jsonResult.optJSONArray("text_results")
+                    if (textResults != null) {
+                        for (i in 0 until textResults.length()) {
+                            val textResult = textResults.optJSONObject(i)
+                            val extractedText = textResult?.optString("text", "")
+
+                            // Log only the extracted text
+                            Log.d("GoogleLensAPI", "Extracted Text: $extractedText")
+                        }
+                    }
+                } catch (e: Exception) {
+                    // Handle JSON parsing exception
+                    Log.e("GoogleLensAPI", "JSON Parsing Error: $e")
+                }
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                // Handle the error
+                Log.e("GoogleLensAPI", "Error: $e")
+            }
+        })
+    }
+}
+package com.example.mediclick
+
+import android.os.Bundle
+import android.util.Log
+import okhttp3.*
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import org.json.JSONArray
+import org.json.JSONObject
+import java.io.IOException
+import java.util.concurrent.TimeUnit
+
+class HP : FeatureActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.er1) // Replace with your layout file
+
+        // Replace "YOUR_IMAGE_URL" with the URL of the image you want to perform the OCR on
+        val imageUrl = ""
+        // Replace <YOUR_API_TOKEN> with your Apify API token
+        val apiToken = "apify_api_oAe9dBmGOx7zyRHqFWcvycOR9boqL34v3JhB"
+
+        // Construct the Apify API endpoint for the OCR actor
+        val endpoint = "https://api.apify.com/v2/acts/alexey~google-lens/runs?token=$apiToken"
+
+        // Set up parameters
+        val urlBuilder = endpoint.toHttpUrlOrNull()!!.newBuilder()
+            .addQueryParameter("startUrls[0][url]", imageUrl)
+            .addQueryParameter("proxy[useApifyProxy]", "true")
+            .build()
+
+        // Create the request
+        val request = Request.Builder()
+            .url(urlBuilder)
+            .post(RequestBody.create(null, ByteArray(0))) // POST request with an empty body
+            .build()
+
+        // Make the HTTP request using OkHttp
+        val client = OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onResponse(call: Call, response: Response) {
+                val responseBody = response.body?.string()
+
+                // Log the full response for debugging
+                Log.d("GoogleLensAPI", "Full Response: $responseBody")
+
+                try {
+                    // Parse the JSON response
+                    val jsonResponse = responseBody?.let { JSONObject(it) }
+                    val data = jsonResponse?.getJSONObject("data")
+                    val itemsArray = data?.getJSONArray("items")
+
+                    // Extract text results
+                    if (itemsArray != null) {
+                        for (i in 0 until itemsArray.length()) {
+                            val item = itemsArray.getJSONObject(i)
+                            val ocrTextArray = item.getJSONArray("ocrText")
+
+                            // Log each line of the extracted text
+                            for (j in 0 until ocrTextArray.length()) {
+                                val extractedText = ocrTextArray.getString(j)
+                                Log.d("GoogleLensAPI", "Extracted Text: $extractedText")
+                            }
+                        }
+                    }
+                } catch (e: Exception) {
+                    // Handle JSON parsing exception
+                    Log.e("GoogleLensAPI", "JSON Parsing Error: $e")
+                }
+            }
+
+            override fun onFailure(call: Call, e: IOException) {
+                // Handle the error
+                Log.e("GoogleLensAPI", "Error: $e")
+            }
+        })
+    }
+}

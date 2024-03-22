@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/L11"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="115dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/L10"
+        app:layout_constraintTop_toBottomOf="@+id/L10">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Saturated Fat"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L2"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="6dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L3"
+        app:layout_constraintStart_toStartOf="@+id/L1"
+        app:layout_constraintTop_toBottomOf="@+id/L1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="@string/calories"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L3"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="6dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L4"
+        app:layout_constraintStart_toStartOf="@+id/L2"
+        app:layout_constraintTop_toBottomOf="@+id/L2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Sugar"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L4"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="6dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L5"
+        app:layout_constraintStart_toStartOf="@+id/L3"
+        app:layout_constraintTop_toBottomOf="@+id/L3">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Protein"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L5"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L6"
+        app:layout_constraintStart_toStartOf="@+id/L4"
+        app:layout_constraintTop_toBottomOf="@+id/L4">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Cholesterol"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L6"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L7"
+        app:layout_constraintStart_toStartOf="@+id/L5"
+        app:layout_constraintTop_toBottomOf="@+id/L5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Sodium"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L7"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="6dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L8"
+        app:layout_constraintStart_toStartOf="@+id/L6"
+        app:layout_constraintTop_toBottomOf="@+id/L6">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Carbo hydreates"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L8"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="6dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L9"
+        app:layout_constraintStart_toStartOf="@+id/L7"
+        app:layout_constraintTop_toBottomOf="@+id/L7">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Fibre"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L9"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L10"
+        app:layout_constraintStart_toStartOf="@+id/L8"
+        app:layout_constraintTop_toBottomOf="@+id/L8">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Potassium"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L10"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="159dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/L9"
+        app:layout_constraintTop_toBottomOf="@id/L9">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Total Fat"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L1"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="5dp"
+        android:background="#BC2222"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/L2"
+        app:layout_constraintStart_toStartOf="@+id/L0"
+        app:layout_constraintTop_toBottomOf="@+id/L0">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="@string/serving_size"
+            android:textColor="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/L0"
+        android:layout_width="150dp"
+        android:layout_height="52dp"
+        android:background="#F1B5BF"
+        android:elevation="2dp"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="24dp">
+
+        <TextView
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/lato"
+            android:gravity="center"
+            android:text="Nutrients"
+            android:textColor="@color/black" />
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

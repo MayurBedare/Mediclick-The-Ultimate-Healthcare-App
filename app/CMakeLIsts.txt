@@ -1,0 +1,19 @@
+# Set the minimum required CMake version
+cmake_minimum_required(VERSION 3.4.1)
+
+# Include OpenCV
+find_package(OpenCV 4.9 REQUIRED java)
+
+# Add your native library (if you have any)
+add_library(
+        native-lib
+        SHARED
+        your_native_sources.cpp
+)
+
+# Link OpenCV libraries to your native library
+target_link_libraries(
+        native-lib
+        ${OpenCV_LIBRARIES}
+        log
+)

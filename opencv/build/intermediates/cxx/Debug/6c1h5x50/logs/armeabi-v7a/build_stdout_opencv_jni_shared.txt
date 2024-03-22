@@ -1,0 +1,2 @@
+ninja: Entering directory `C:\Users\ADMIN\AndroidStudioProjects\Mediclick-The Ultimate Healthcare App\opencv\.cxx\Debug\6c1h5x50\armeabi-v7a'
+ninja: no work to do.

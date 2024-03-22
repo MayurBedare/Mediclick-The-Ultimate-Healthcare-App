@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mediclick">
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Mediclick2"
+        tools:targetApi="31">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashTheme"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".ML1" />
+        <activity
+            android:name=".OTPActivity" />
+        <activity
+            android:name=".NV1"/>
+        <activity
+            android:name=".AA1" />
+        <activity
+            android:name=".PhoneActivity" />
+        <activity
+        android:name=".AA2"/>
+        <activity
+            android:name=".IP2"
+            android:theme="@style/Theme.MeditationApp" />
+        <activity
+            android:name=".IP3"
+            android:theme="@style/Theme.MeditationApp" />
+        <activity
+            android:name=".NV2"
+            android:exported="false"
+            android:label="Nutritional 1" />
+        <activity
+            android:name=".ML2" />
+        <activity
+            android:name=".FeatureActivity"/>
+<!--            android:label="try"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".VideosView" />
+        <activity
+            android:name=".About" />
+        <activity
+            android:name=".Share" />
+        <activity
+            android:name=".IP1" />
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Mediclick2">
+        </activity>
+        <activity
+            android:name=".MeditationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true"
+            android:theme="@style/Theme.MeditationApp.Fullscreen" />
+        <activity
+            android:name=".BreathActivity"
+            android:theme="@style/Theme.MeditationApp"/>
+        <activity android:name=".SignMainActivity"
+            android:theme="@style/Theme.Mediclick2"/>
+        <activity
+            android:name=".presentation.activity.BMI"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activity.ResultActivity"
+            android:exported="false">
+        </activity>
+        <activity
+            android:name=".AC1"
+            android:exported="false" >
+        </activity>
+        <activity
+            android:name=".AC2"
+            android:exported="false" />
+        <activity
+            android:name=".LoginAddUser"
+            android:exported="false" />
+        <activity
+            android:name=".MS2Crop"
+            android:exported="true"/>
+        <activity
+            android:name=".MS3"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".MS2"
+            android:exported="false" />
+        <activity
+            android:name=".MS1"
+            android:exported="false">
+        </activity>
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="org.opencv.engine.OpenCVEngineInterface"
+            android:resource="@xml/opencv_version" />
+        <activity
+            android:name="com.canhub.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.trend-oceans.file share.MainActivity.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.mediclick.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <receiver android:name=".helper.NotificationReceiver" />
+    </application>
+
+</manifest>
