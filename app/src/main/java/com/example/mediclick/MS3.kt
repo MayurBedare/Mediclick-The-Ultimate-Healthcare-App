@@ -25,7 +25,7 @@ open class MS3 : MS2Crop() {
     private lateinit var animationView: LottieAnimationView
     private lateinit var animationViewh: LottieAnimationView
     private lateinit var animationViewh1: LottieAnimationView
-    private val apiToken = "apify_api_oAe9dBmGOx7zyRHqFWcvycOR9boqL34v3JhB"
+    private val apiToken = "api_key"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
