@@ -58,7 +58,7 @@ Clone the repository:
 
 bash
 Copy
-git clone https://github.com/yourusername/MediClick.git  
+git clone https://github.com/MayurBedare/Mediclick-The-Ultimate-Healthcare-App.git  
 
 Open the project in Android Studio.
 
